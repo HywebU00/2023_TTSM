@@ -1,15 +1,84 @@
 <!doctype html>
 <html lang="zh-Hant">
-<?php require_once('include/inc_head.php'); ?>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name=”format-detection” content=”telephone=no”>
+  <link type="images/ico" rel="icon" href="images/ttsm.ico">
+  <title>Taiwan International Tradeshows</title>
+
+  <!-- vendor css -->
+  <link rel="stylesheet" href="vendor/fontello/css/fontello.min.css">
+  <link rel="stylesheet" href="vendor/slick/1.8/slick.min.css">
+  <link rel="stylesheet" href="vendor/WOW-master/css/libs/animate.css">
+  <!-- css -->
+  <link rel="stylesheet" href="css/tts.css">
+  <link rel="stylesheet" href="css/ttsm.css">
+  <link rel="stylesheet" href="vendor/lity-2.4.1/dist/lity.css">
+
+</head>
 
 <body class="ttsm">
   <div class="wrapper">
     <!-- header Start -->
-    <?php require_once('include/inc_header.php'); ?>
-    <!-- header End -->
+<header class="header">
+  <div class="container">
+    <a class="sidebarCtrl" href="#">
+      <span class="dataText">Menu</span>
+      <span></span><span></span><span></span>
+    </a>
 
-    <!-- inner-kv -->
-    <?php require_once('include/inc_inner-kv.php'); ?>
+    <a href="mp.php" class="logo"><img src="images/logo-en.png" alt="網站標題" /></a>
+    <button type="button" class="searchCtrl"></button>
+    <!-- navigation Start -->
+    <nav class="navigation">
+      <ul>
+        <li><a class='account' href="#">MY TAITRA</a></li>
+        <li><a class='iframe' href="#">LOG OUT</a></li>
+        <li>
+          <div class="language"><a href="#">English</a>
+            <ul>
+              <li><a href="#" title="正體中文">正體中文</a></li>
+              <li><a href="https://cloud.taiwantradeshows.com.tw/schedule/id.pdf" target="_blank">Indonesia</a></li>
+              <li><a href="https://cloud.taiwantradeshows.com.tw/schedule/th.pdf" target="_blank" title="ภาษาไทย">ภาษาไทย</a></li>
+              <li><a href="https://cloud.taiwantradeshows.com.tw/schedule/vn.pdf" target="_blank" title="Tiếng Việt Nam">Tiếng Việt Nam</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- menu Start -->
+    <nav class="menu">
+      <ul>
+        <li><a href="#">關於我們</a></li>
+        <li><a href="#">最新消息</a></li>
+        <li><a href="#">展覽檔期</a></li>
+        <li><a href="#">展覽影音</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- Search Start -->
+  <div class="search">
+    <button class="closeBtn" type="button"></button>
+    <form action="" class="form_inline">
+      <div class="form_grp">
+        <select name="" id="">
+          <option value="">全部</option>
+        </select>
+      </div>
+      <div class="form_grp">
+        <input name="" id="" type="text" placeholder="請輸入您想查詢的展覽檔期" accesskey="S">
+      </div>
+      <div class="btn_grp">
+        <!--注意：手機版清除資料icon <a class="btn-close icon-cancel-1"></a> -->
+        <button type="button" class="btn-search">查詢</button>
+      </div>
+    </form>
+  </div>
+</header>
+    <!-- header End -->
 
     <!-- main Start -->
     <div id="center" class="main innerpage tie-2021">
@@ -1402,12 +1471,60 @@
   <!-- main End -->
 
   <!-- footer -->
-  <?php require_once('include/inc_footer.php'); ?>
+  <footer>
+  <div class="container">
+    <div class="footer_icon">
+      <ul>
+        <li>
+          <a target="_blank" href="javascript:;" title="另開視窗">
+            <img src="images/icon/footer-icon4.png" alt="HOTEL">
+            簽證
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="javascript:;" title="另開視窗">
+            <img src="images/icon/footer-icon5.png" alt="VISA">
+            駐外單位
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer_logo">
+      <img src="images/logo-en.png" alt="Footer Logo" class="img-responsive">
+    </div>
+    <div class="QRcode">
+      <img src="images/QRcord.jpg" alt="TTS QRcode" class="img-responsive">
+    </div>
+  </div>
+
+  <div class="container">
+    <ul class="footer_link">
+      <li><a href="javascript:;">服務條款和隱私權政策</a></li>
+      <li><a href="javascript:;">免責聲明</a></li>
+    </ul>
+    <div class="footer_info">
+      <p>
+        主辦單位：經濟部國際貿易局<br />
+        執行單位：中華民國對外貿易發展協會
+      </p>
+      <p>Taiwan International Tradeshows© 2020All Rights Reserved</p>
+    </div>
+  </div>
+</footer>
 
   </div>
   <!-- wrapper End -->
   <a href="javascript:;" class="scrollToTop" title="回頁首">回頁首</a>
-  <?php require_once('include/inc_jq.php'); ?>
+  <!-- jQuery -->
+<script src="js/jquery-3.6.0.min.js"></script>
+<!-- slick js -->
+<script src="vendor/slick/1.8/slick.min.js"></script>
+
+<script src="vendor/WOW-master/dist/wow.min.js"></script>
+<script src="vendor/lity-2.4.1/dist/lity.min.js"></script>
+
+<!-- js -->
+<script src="js/main.js"></script>
 </body>
 
 </html>
