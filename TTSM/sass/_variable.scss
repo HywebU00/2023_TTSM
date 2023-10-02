@@ -1,0 +1,59 @@
+/* 此變數為框架之整體變數，控制整體網站之設定，包含 顏色、文字、格線系統*/
+/* 於mixins 資料夾內，各個模組也有其個別使用的變數，請至個別檔案設定，個別使用變數不含在此設定*/
+
+/*-------------------------------------------------------------顏色---------//*/
+/* 定義顏色 此顏色可自由變換*/
+$primaryColor: #1493df !default; /*主色 */
+$secondaryColor: #781f79 !default; /*輔色*/
+$lightColor: #fcc211 !default; /*點綴*/
+$linkColor: #1493df !default; /*連結*/
+$importantColor: #ba0012 !default; /*重要*/
+$keyword: #f06 !default; /*關鍵字*/
+/* 但注意真實顏色與語意的關聯必須易於辨識*/
+
+$color-blue: #007bff !default;
+$color-lightblue: #0ffaf9 !default;
+$color-darkblue: #2f549c !default;
+
+$color-green: #5cb85c !default;
+$color-orange: #f77810 !default;
+$color-red: #dc3545 !default;
+$color-yellow: #fcc211 !default;
+$color-purple: #aa5ac5 !default;
+$color-gray: #ccc !default;
+$color-dark: #333 !default;
+$color-hr: #666 !default; /*hr顏色*/
+$color-word: #333 !default;
+$white: white !default; /*white顏色*/
+$black: black !default; /*black顏色*/
+/* 連結顏色*/
+$aColor: #333 !default;
+$aHover: #1493df !default;
+
+/* 表單focus顏色*/
+$form-focus: #1493df !default; /*表單*/
+$text-muted: #999 !default; /*表單說明字*/
+
+/*-------------------------------------------------------------字型--------//*/
+
+/* 字型設定*/
+$font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體, 新細明體, Arial, sans-serif;
+$font-size: 1em;
+
+/*-------------------------------------------------------------格線系統-----//*/
+
+/* 格線系統*/
+$grid-columns: 12 !default; /*格線欄位數*/
+$grid-gutter-width: 30px !default; /*左右padding*/
+$container-max: 1200px !default; /*container最大寬*/
+
+/*mediaquery*/
+$screen-lg: 1400px !default; /*電腦*/
+$screen-md: 992px !default; /*平板*/
+$screen-sm: 768px !default; /*手機*/
+$screen-xs: 576px !default; /*極小尺寸*/
+
+/*-------------------------------------------------------------客製化------//*/
+
+/* 圖片*/
+$rounded-angle: 16px; /*圖片導角*/

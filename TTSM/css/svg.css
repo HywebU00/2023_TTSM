@@ -1,0 +1,91 @@
+#Outline_right{
+  stroke: #FFF;
+  stroke-dashoffset:1000;
+  stroke-dasharray:200; 
+  fill-opacity: 0;
+  stroke-width: 1px; 
+  -webkit-animation: draw_right 5s ease-in infinite; 
+  animation: draw_right 5s ease-in infinite;   
+  fill:#FFF;     
+}
+
+@-webkit-keyframes draw_right {  
+ 0% {-webkit-transform: translateX(50px);transform: translateX(50px);
+   fill-opacity: 0;fill:#FFF;}
+   40% {-webkit-transform: translateX(0);transform: translateX(0);
+     stroke-dashoffset: 0;
+     fill-opacity: 1;fill:#FFF;
+     stroke-width: 0pt;}
+     50%{stroke-dashoffset: 0;
+       fill-opacity: 1;fill:#FFF;
+       stroke-width: 0pt;       
+     }  
+     80% {-webkit-transform: translateX(0);transform: translateX(0);fill-opacity: 1;}  
+   }
+
+   @keyframes draw_right {  
+     0% {-webkit-transform: translateX(50px);transform: translateX(50px);
+       fill-opacity: 0;fill:#FFF;}
+       40% {-webkit-transform: translateX(0);transform: translateX(0);
+         stroke-dashoffset: 0;
+         fill-opacity: 1;fill:#FFF;
+         stroke-width: 0pt;}
+         50%{stroke-dashoffset: 0;
+           fill-opacity: 1;fill:#FFF;
+           stroke-width: 0pt;       
+         }  
+         80% {-webkit-transform: translateX(0);transform: translateX(0);fill-opacity: 1;}  
+       }
+
+
+
+
+
+
+
+
+
+
+
+       /*------------英文字---------------*/
+
+       #Txt_white{
+        stroke: #FFF;
+        stroke-dashoffset:1000;
+        stroke-dasharray:200;
+        -webkit-animation: draw_blue 5s linear infinite;
+        animation: draw_blue 5s linear infinite;
+        fill-opacity: 0;
+        stroke-width: 1px;
+        fill:#FFF;  
+      }
+
+
+      @-webkit-keyframes draw_blue {    
+       20%{fill-opacity: 0;fill:#FFF;  }  
+       50%{stroke-dashoffset: 0;
+        fill-opacity: 1;fill:#FFF;
+        stroke-width: 0pt;        
+      }
+      100%{stroke-dashoffset: 0;
+        fill-opacity: 1;fill:#FFF;
+        stroke-width: 0pt;        
+      }
+    }
+
+
+    @keyframes draw_blue {    
+     20%{fill-opacity: 0;fill:#FFF;  }  
+     50%{stroke-dashoffset: 0;
+      fill-opacity: 1;fill:#FFF;
+      stroke-width: 0pt;        
+    }
+    100%{stroke-dashoffset: 0;
+      fill-opacity: 1;fill:#FFF;
+      stroke-width: 0pt;        
+    }
+  }
+
+
+
+
