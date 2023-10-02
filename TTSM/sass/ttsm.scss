@@ -163,6 +163,8 @@
       position: relative;
       right: auto;
       top: auto;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
       width: 100%;
     }
     & > a {
@@ -257,6 +259,7 @@
     z-index: 9;
     &.m_search {
       top: 60px;
+      position: fixed;
     }
     form {
       height: 100px;
