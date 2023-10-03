@@ -1199,9 +1199,6 @@
     margin: 0 0 20px;
   }
 }
-.ttsm .MP .video .listBox .item:hover .pic::before {
-  animation: bounce 1s infinite;
-}
 .ttsm .MP .video .listBox .item:hover .title {
   color: #b02b73;
 }

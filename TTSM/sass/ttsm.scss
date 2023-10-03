@@ -1098,9 +1098,9 @@
         }
         .item {
           &:hover {
-            .pic::before {
-              animation: bounce 1s infinite;
-            }
+            // .pic::before {
+            //   animation: bounce 1s infinite;
+            // }
             .title {
               color: #b02b73;
             }
