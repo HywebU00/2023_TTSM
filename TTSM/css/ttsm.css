@@ -257,7 +257,7 @@
   line-height: 1.55em;
   height: 38px;
   position: relative;
-  transition: 0.3s ease-out;
+  transition: all 0.3s ease;
   border: none;
 }
 @media screen and (max-width: 991px) {
@@ -449,7 +449,7 @@
 .ttsm .sidebar {
   display: block;
   transform: translateX(-100%);
-  transition: all 0.3s linear;
+  transition: all 0.3s ease;
 }
 .ttsm .sidebar.is-active {
   transform: translateX(0%);
@@ -493,13 +493,18 @@
   width: 7ch;
   height: 1px;
   position: absolute;
+  display: block;
   bottom: 0;
   right: 0;
   background: #5366a4;
   transition: all 0.3s ease;
 }
+.ttsm .MP .indexMore:hover {
+  color: #b02b73;
+}
 .ttsm .MP .indexMore:hover::before {
   width: 12ch;
+  background: #b02b73;
 }
 .ttsm .MP .KV-Banner {
   margin: 0 0 2%;
@@ -507,7 +512,6 @@
   position: relative;
   /*** 大圖 ***/
   /*** 大圖 ***/
-  /*** 小圖 ***/
   /*** 小圖 ***/
   /*hover、focus*/
   /*.slick-prev:focus*/
@@ -530,6 +534,11 @@
     display: block;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
     opacity: 0.5;
+  }
+}
+@media screen and (max-width: 767px) {
+  .ttsm .MP .KV-Banner {
+    aspect-ratio: 3/2;
   }
 }
 .ttsm .MP .KV-Banner + section {
@@ -577,6 +586,13 @@
   -o-object-fit: contain;
      object-fit: contain;
 }
+@media screen and (max-width: 767px) {
+  .ttsm .MP .KV-Banner .picBox img {
+    aspect-ratio: 3/2;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
 .ttsm .MP .KV-Banner .picBox .slick-prev,
 .ttsm .MP .KV-Banner .picBox .slick-next {
   top: 50%;
@@ -585,6 +601,7 @@
 .ttsm .MP .KV-Banner .navBox {
   max-width: 800px;
   transform: translateY(-50%);
+  /*** 小圖 ***/
 }
 @media screen and (max-width: 991px) {
   .ttsm .MP .KV-Banner .navBox {
@@ -622,10 +639,10 @@
 .ttsm .MP .KV-Banner .navBox .slick-current .pic {
   border: 4px solid #4cabef;
 }
-.ttsm .MP .KV-Banner .pic {
+.ttsm .MP .KV-Banner .navBox .pic {
   background: #fff;
 }
-.ttsm .MP .KV-Banner .pic img {
+.ttsm .MP .KV-Banner .navBox .pic img {
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -648,7 +665,6 @@
   border: 2px solid #fff;
   border-radius: 50%;
   transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
   background: url("../vendor/slick/1.8/icon_arrow_left_inverse.png") center center no-repeat;
   background-size: 20px;
 }
@@ -772,6 +788,13 @@
 .ttsm .MP .exhibition .topBox .item {
   padding: 0 0 20px;
 }
+.ttsm .MP .exhibition .topBox .item:hover .pic img {
+  transform: scale(1.2);
+  transition: all 5s ease;
+}
+.ttsm .MP .exhibition .topBox .item:hover .title {
+  text-decoration: underline;
+}
 .ttsm .MP .exhibition .topBox .pic {
   max-width: 800px;
   width: 55%;
@@ -807,6 +830,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   margin: 0 0 20px;
+  transition: all 0.3s ease;
 }
 @media screen and (max-width: 991px) {
   .ttsm .MP .exhibition .topBox .infoBox .title {
@@ -1105,7 +1129,7 @@
 }
 .ttsm .MP .news .item:hover .pic img {
   transform: scale(1.2);
-  transition: all 10s ease;
+  transition: all 5s ease;
 }
 .ttsm .MP .news .item:hover .title {
   color: #5366a4;
@@ -1178,6 +1202,9 @@
 .ttsm .MP .video .listBox .item:hover .pic::before {
   animation: bounce 1s infinite;
 }
+.ttsm .MP .video .listBox .item:hover .title {
+  color: #b02b73;
+}
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
@@ -1233,6 +1260,7 @@
 .ttsm .MP .video .pic::before {
   content: "";
   position: absolute;
+  display: block;
   z-index: 2;
   inset: 0;
   background: url("../images/icon/icon_youtube.svg") no-repeat center;
@@ -1481,11 +1509,6 @@
 @media screen and (max-width: 991px) {
   .ttsm .breadcrumbBox {
     margin: 0 0 30px;
-  }
-}
-@media screen and (max-width: 575px) {
-  .ttsm .breadcrumbBox {
-    display: none;
   }
 }
 .ttsm .breadcrumbBox .breadcrumb {
@@ -1792,7 +1815,7 @@
 }
 .ttsm .lpList .pic img {
   aspect-ratio: 4/3;
-  transition: all 10s ease;
+  transition: all 5s ease;
 }
 .ttsm .lpDetail .pageTitle {
   background: #ececec;
@@ -1858,7 +1881,7 @@
 }
 .ttsm .lpBlock .listBox .pic img {
   aspect-ratio: 4/3;
-  transition: all 10s ease;
+  transition: all 5s ease;
 }
 .ttsm .lpBlock .listBox .pic time {
   display: block;
@@ -1914,7 +1937,7 @@
   width: 60px;
   height: 30px;
   right: 0;
-  top: -50px;
+  top: -68px;
   transition: all 0.3s ease;
 }
 .ttsm .lpSwitch .sideBtn:hover {
@@ -2412,8 +2435,7 @@
   vertical-align: text-top;
   white-space: nowrap;
 }
-.ttsm .cp2 .topInfoBox .infoBox a,
-.ttsm .cp2 .topInfoBox .infoBox button {
+.ttsm .cp2 .topInfoBox .infoBox > a, .ttsm .cp2 .topInfoBox .infoBox > button {
   width: 30px;
   height: 30px;
   display: block;
@@ -2423,39 +2445,55 @@
   top: 20px;
   z-index: 9;
 }
-.ttsm .cp2 .topInfoBox .infoBox a::before,
-.ttsm .cp2 .topInfoBox .infoBox button::before {
+.ttsm .cp2 .topInfoBox .infoBox > a::before, .ttsm .cp2 .topInfoBox .infoBox > button::before {
   content: "";
   width: 20px;
   height: 20px;
   padding: 0;
   margin: 0;
+  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   border: none;
 }
-.ttsm .cp2 .topInfoBox .infoBox a.star,
-.ttsm .cp2 .topInfoBox .infoBox button.star {
+.ttsm .cp2 .topInfoBox .infoBox > a.star, .ttsm .cp2 .topInfoBox .infoBox > button.star {
   right: 20px;
 }
-.ttsm .cp2 .topInfoBox .infoBox a.star::before,
-.ttsm .cp2 .topInfoBox .infoBox button.star::before {
+.ttsm .cp2 .topInfoBox .infoBox > a.star::before, .ttsm .cp2 .topInfoBox .infoBox > button.star::before {
   background: url("../images/icon/icon_star.png");
 }
-.ttsm .cp2 .topInfoBox .infoBox a.world,
-.ttsm .cp2 .topInfoBox .infoBox button.world {
+.ttsm .cp2 .topInfoBox .infoBox > a.world, .ttsm .cp2 .topInfoBox .infoBox > button.world {
   right: 60px;
 }
-.ttsm .cp2 .topInfoBox .infoBox a.world::before,
-.ttsm .cp2 .topInfoBox .infoBox button.world::before {
+.ttsm .cp2 .topInfoBox .infoBox > a.world::before, .ttsm .cp2 .topInfoBox .infoBox > button.world::before {
   background: url("../images/icon/icon_world.png");
 }
-.ttsm .cp2 .topInfoBox .infoBox a.active::before, .ttsm .cp2 .topInfoBox .infoBox a:hover::before,
-.ttsm .cp2 .topInfoBox .infoBox button.active::before,
-.ttsm .cp2 .topInfoBox .infoBox button:hover::before {
+.ttsm .cp2 .topInfoBox .infoBox > a.active::before, .ttsm .cp2 .topInfoBox .infoBox > a:hover::before, .ttsm .cp2 .topInfoBox .infoBox > button.active::before, .ttsm .cp2 .topInfoBox .infoBox > button:hover::before {
   background-position: bottom;
+}
+.ttsm .cp2 .calender {
+  width: auto;
+  position: relative;
+  display: inline-block;
+  padding: 0 0 0 25px;
+  margin: 0 0 0 20px;
+  transition: all 0.3s ease;
+}
+.ttsm .cp2 .calender:hover {
+  filter: hue-rotate(140deg) brightness(0.7);
+}
+.ttsm .cp2 .calender::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  background: url("../images/icon/icon_calendar.svg") no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
 }
 .ttsm .cp2 .detailBox {
   padding: 20px;
