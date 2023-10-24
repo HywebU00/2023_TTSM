@@ -87,7 +87,7 @@ $('.KV-Banner .navBox a').on('click', function (e) {
 $('.exhibition .container').prepend('<div class="topBox wow fadeInDown" data-wow-delay=".2s"></div>');
 $('.exhibition .topBox').append($('.exhibition .navBox .item').eq(0).clone());
 $('.exhibition .navBox .item a').on('click', function (e) {
-  e.preventDefault();
+  // e.preventDefault();
   $('.exhibition .topBox .item').remove();
   $('.exhibition .topBox').append($(this).parent('.item').clone());
 });
@@ -235,6 +235,7 @@ $(function () {
     pauseOnHover: true,
     pauseOnFocus: true,
     focusOnSelect: true,
+    infinite: true,
     asNavFor: '.KV-Banner .navBox',
     responsive: [
       {
@@ -258,6 +259,7 @@ $(function () {
     pauseOnHover: true,
     pauseOnFocus: true,
     focusOnSelect: true,
+    infinite: true,
     asNavFor: '.KV-Banner .picBox',
   });
 

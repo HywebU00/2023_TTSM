@@ -96,6 +96,10 @@
 .ttsm *:after {
   display: none;
 }
+.ttsm .sidebar .m_area {
+  height: auto;
+  bottom: 0;
+}
 .ttsm .header .container {
   height: 120px;
   max-width: 1440px;
@@ -305,6 +309,8 @@
   list-style: none;
   display: none;
   margin: 0;
+  background: rgba(0, 0, 0, 0.8) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 @media screen and (max-width: 991px) {
   .ttsm .language ul {
@@ -322,10 +328,13 @@
 }
 .ttsm .language ul li a {
   display: block !important;
-  color: #fff !important;
   padding: 0.5em 0.5em 0.5em 1em !important;
   transition: 0.3s ease-out;
   font-size: 0.938em;
+  color: #fff;
+  text-shadow: none;
+  text-align: left;
+  background: none !important;
 }
 .ttsm .language ul li a:hover, .ttsm .language ul li a:focus {
   background: RGBA(0, 0, 0, 0.3);
@@ -484,18 +493,21 @@
   display: block;
   text-align: right;
   position: relative;
-  font-size: 0.8125rem;
+  font-size: 1rem;
   color: #5366a4;
   padding-bottom: 5px;
+  text-align: center;
+  margin: 30px auto 0;
 }
 .ttsm .MP .indexMore::before {
   content: "";
-  width: 7ch;
+  width: 10ch;
   height: 1px;
   position: absolute;
   display: block;
   bottom: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background: #5366a4;
   transition: all 0.3s ease;
 }
@@ -534,11 +546,6 @@
     display: block;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
     opacity: 0.5;
-  }
-}
-@media screen and (max-width: 767px) {
-  .ttsm .MP .KV-Banner {
-    aspect-ratio: 3/2;
   }
 }
 .ttsm .MP .KV-Banner + section {
@@ -585,13 +592,6 @@
   aspect-ratio: 1920/584;
   -o-object-fit: contain;
      object-fit: contain;
-}
-@media screen and (max-width: 767px) {
-  .ttsm .MP .KV-Banner .picBox img {
-    aspect-ratio: 3/2;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
 }
 .ttsm .MP .KV-Banner .picBox .slick-prev,
 .ttsm .MP .KV-Banner .picBox .slick-next {
@@ -845,7 +845,7 @@
 }
 .ttsm .MP .exhibition .navBox {
   display: flex;
-  margin: 0 0 30px;
+  margin: -15px 0 30px;
   gap: 20px;
 }
 @media screen and (min-width: 992px) {
@@ -856,6 +856,9 @@
     gap: 20px;
   }
 }
+.ttsm .MP .exhibition .navBox .slick-track {
+  height: 100%;
+}
 @media screen and (min-width: 992px) {
   .ttsm .MP .exhibition .navBox .slick-slide {
     float: none;
@@ -864,7 +867,6 @@
 @media screen and (max-width: 991px) {
   .ttsm .MP .exhibition .navBox .slick-slide {
     width: auto;
-    padding: 0 10px;
   }
 }
 .ttsm .MP .exhibition .navBox .item {
@@ -875,10 +877,12 @@
   border-radius: 10px;
   overflow: hidden;
   background: #fff;
+  margin: 15px;
 }
 @media screen and (max-width: 991px) {
   .ttsm .MP .exhibition .navBox .item a {
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    height: calc(100% - 30px);
   }
 }
 .ttsm .MP .exhibition .navBox .item:hover .pic::after {
@@ -936,7 +940,6 @@
     position: relative;
     opacity: 1;
     text-align: left;
-    align-items: flex-end;
   }
 }
 .ttsm .MP .exhibition .navBox .infoBox time.date {
@@ -970,13 +973,16 @@
 }
 .ttsm .MP .exhibition .navBox .infoBox .location {
   display: none;
-  padding: 2px 0 5px 30px;
+  padding: 2px 0 0px 30px;
   background: url("../images/icon/icon_location.svg") no-repeat left top;
   color: #757575;
+  overflow: hidden;
 }
 @media screen and (max-width: 991px) {
   .ttsm .MP .exhibition .navBox .infoBox .location {
-    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1055,7 +1061,7 @@
     width: 50%;
     margin: 20px 0;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   }
 }
 .ttsm .MP .hotNews .description {
@@ -1509,7 +1515,7 @@
   }
 }
 .ttsm .breadcrumbBox .breadcrumb {
-  font-size: 0.875rem;
+  font-size: 1rem;
   z-index: 3;
   color: #333333;
   opacity: 0.7;
@@ -1935,7 +1941,13 @@
   height: 30px;
   right: 0;
   top: -68px;
+  display: none;
   transition: all 0.3s ease;
+}
+@media screen and (max-width: 767px) {
+  .ttsm .lpSwitch .sideBtn {
+    display: block;
+  }
 }
 .ttsm .lpSwitch .sideBtn:hover {
   background-color: #7f8aad;
@@ -2330,7 +2342,7 @@
   -o-object-fit: contain;
      object-fit: contain;
 }
-.ttsm .cp2 .topInfoBox .linkBox a {
+.ttsm .cp2 .topInfoBox .linkBox > div > a {
   height: 50px;
   display: block;
   padding: 10px 20px 10px 55px;
@@ -2343,7 +2355,7 @@
   white-space: nowrap;
   transition: all 0.3s ease;
 }
-.ttsm .cp2 .topInfoBox .linkBox a::before {
+.ttsm .cp2 .topInfoBox .linkBox > div > a::before {
   content: "";
   width: 30px;
   height: 30px;
@@ -2352,38 +2364,56 @@
   top: 10px;
   display: block;
 }
-.ttsm .cp2 .topInfoBox .linkBox a + a {
+.ttsm .cp2 .topInfoBox .linkBox > div + div {
   margin: 5px 0 0;
 }
-.ttsm .cp2 .topInfoBox .linkBox .register {
+.ttsm .cp2 .topInfoBox .linkBox .register > a {
   color: #dc2032;
 }
-.ttsm .cp2 .topInfoBox .linkBox .register::before {
+.ttsm .cp2 .topInfoBox .linkBox .register > a::before {
   background-image: url("../images//icon/icon_exhibition1.svg");
   background-size: contain;
 }
-.ttsm .cp2 .topInfoBox .linkBox .register:hover {
-  border: 1px solid #dc2032;
+.ttsm .cp2 .topInfoBox .linkBox .register:hover a {
+  color: #dc2032;
+  border-color: #dc2032 !important;
 }
-.ttsm .cp2 .topInfoBox .linkBox .Apply {
+.ttsm .cp2 .topInfoBox .linkBox .Apply > a {
   color: #1dbdf1;
 }
-.ttsm .cp2 .topInfoBox .linkBox .Apply::before {
+.ttsm .cp2 .topInfoBox .linkBox .Apply > a::before {
   background-image: url("../images//icon/icon_exhibition2.svg");
   background-size: contain;
 }
-.ttsm .cp2 .topInfoBox .linkBox .Apply:hover {
-  border: 1px solid #1dbdf1;
+.ttsm .cp2 .topInfoBox .linkBox .Apply:hover a {
+  border-color: #1dbdf1;
 }
-.ttsm .cp2 .topInfoBox .linkBox .media {
+.ttsm .cp2 .topInfoBox .linkBox .media > a {
   color: #85d233;
 }
-.ttsm .cp2 .topInfoBox .linkBox .media::before {
+.ttsm .cp2 .topInfoBox .linkBox .media > a::before {
   background-image: url("../images//icon/icon_exhibition3.svg");
   background-size: contain;
 }
-.ttsm .cp2 .topInfoBox .linkBox .media:hover {
-  border: 1px solid #85d233;
+.ttsm .cp2 .topInfoBox .linkBox .media:hover a {
+  border-color: #85d233;
+}
+.ttsm .cp2 .topInfoBox .linkBox .regchi {
+  margin: 0;
+  padding: 2px 0px 10px 0px !important;
+  list-style: none;
+}
+.ttsm .cp2 .topInfoBox .linkBox .regchi li {
+  background-color: #f5f5f5;
+  margin-bottom: 2px;
+}
+.ttsm .cp2 .topInfoBox .linkBox .regchi li a {
+  font-weight: normal;
+  border-radius: 5px;
+  display: block;
+  padding: 10px;
+  text-align: center !important;
+  border: 1px solid #e2e2e2 !important;
 }
 .ttsm .cp2 .topInfoBox .infoBox {
   padding: 30px 0 0;
@@ -2542,20 +2572,25 @@
 .ttsm footer .container:nth-child(2) {
   display: block;
 }
-.ttsm footer .container .footer_icon,
 .ttsm footer .container .footer_logo,
 .ttsm footer .container .QRcode {
   width: auto;
   float: none;
   line-height: 0;
 }
-.ttsm footer .container .footer_icon img,
 .ttsm footer .container .footer_logo img,
 .ttsm footer .container .QRcode img {
   width: 100%;
   max-height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media screen and (max-width: 767px) {
+  .ttsm footer .container .footer_icon img {
+    width: 50px;
+    height: 50px !important;
+    margin: 0 auto;
+  }
 }
 .ttsm footer .container .footer_icon {
   order: 0;
@@ -2650,4 +2685,133 @@
 }
 .ttsm footer .container .footer_info p {
   margin: 10px 0 0;
+}
+
+@keyframes cookie_fadeIn {
+  0% {
+    bottom: -5em;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0em;
+    opacity: 1;
+  }
+}
+.ttsm .mt-cookie {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.85);
+  transform: translate3d(0, 0, 0);
+  width: 300px;
+  left: 1em;
+  bottom: 0em;
+  border-radius: 0.5em;
+  padding: 1em;
+  color: #fff;
+  z-index: 99999;
+  margin-bottom: 1em;
+  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), box-shadow 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: perspective(600px) translate3d(0, 0, 0);
+  animation: cookie_fadeIn 0.6s 2s both cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+@media screen and (max-width: 575px) {
+  .ttsm .mt-cookie {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 0;
+  }
+  .ttsm .mt-cookie p {
+    margin-bottom: 0.5em;
+  }
+  .ttsm .mt-cookie a.more {
+    margin-top: 0;
+  }
+}
+.ttsm .mt-cookie a.close {
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  top: -1em;
+  right: 0em;
+  border-radius: 50%;
+  background: #fff;
+  display: block;
+  text-align: center;
+}
+.ttsm .mt-cookie a.close i {
+  color: #55679f;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.ttsm .mt-cookie a.close:hover, .ttsm .mt-cookie a.close:focus {
+  background: #fff;
+}
+.ttsm .mt-cookie h3 {
+  font-size: 1.5em;
+  margin: 1rem auto;
+}
+.ttsm .mt-cookie h3,
+.ttsm .mt-cookie p {
+  color: #fff;
+}
+.ttsm .mt-cookie p {
+  font-size: 0.813rem;
+  line-height: 1.6em;
+  font-weight: normal;
+}
+@media screen and (max-width: 575px) {
+  .ttsm .mt-cookie p {
+    font-size: 0.813rem;
+  }
+}
+.ttsm .mt-cookie a {
+  color: #eee;
+  text-decoration: none;
+}
+.ttsm .mt-cookie a:hover, .ttsm .mt-cookie a:focus {
+  background: rgba(0, 0, 0, 0.15);
+}
+.ttsm .mt-cookie a.more {
+  display: block;
+  margin: 0em 0 0em auto;
+  min-width: 10em;
+  text-align: center;
+  color: #333;
+  width: 10em;
+  max-width: 12em;
+  text-transform: uppercase;
+  font-size: 16px;
+  position: relative;
+  transition: 0.3s ease-out;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #fff;
+  padding: 0em 0.5em 0.5em 2em;
+  top: 1.1em;
+  margin-bottom: 1em;
+  border: none !important;
+}
+.ttsm .mt-cookie a.more:before {
+  position: absolute;
+  content: "";
+  width: 2em;
+  height: 3px;
+  display: block;
+  left: 0em;
+  background: #fff;
+  top: 1.1em;
+  transform: scale(1) !important;
+  transition: 0.3s ease-out;
+}
+.ttsm .mt-cookie a.more:hover, .ttsm .mt-cookie a.more:focus {
+  color: #fff;
+  top: 1.1em;
+}
+.ttsm .mt-cookie a.more:hover::before, .ttsm .mt-cookie a.more:focus::before {
+  width: 1.5em;
+  left: 1em;
 }/*# sourceMappingURL=ttsm.css.map */

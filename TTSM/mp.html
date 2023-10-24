@@ -182,7 +182,7 @@
             <h2 class="sectionTitle wow fadeInDown" data-wow-delay=".2s">最新展覽</h2>
             <div class="navBox">
               <div class="item">
-                <a href="#">
+                <a href="https://hywebu00.github.io/2023_TTSW/A/mp2.htm">
                   <div class="pic">
                     <picture>
                       <source media="(min-width: 992px)" srcset="./images/demo/exhibition.jpg" />
@@ -599,9 +599,30 @@
         </div>
       </footer>
     </div>
-    <!-- wrapper End -->
-
     <a href="javascript:;" class="scrollToTop" title="回頁首">回頁首</a>
+
+    <!-- wrapper End -->
+    <div class="mt-cookie">
+      <div class="container">
+        <h3>Cookies</h3>
+        <p>為了給您更好的服務，本網站使用cookies，如果您繼續使用我們將視為您同意接收所有本網站的cookies。</p>
+        <p><a href="#">請參閱新版隱私權政策內容</a></p>
+        <a href="#" class="more"><span>Accept</span></a>
+      </div>
+    </div>
+    <!-- JS -->
+    <script>
+      $(function () {
+        $('.mt-cookie')
+          .find('a.close')
+          .off()
+          .click(function (e) {
+            $('.mt-cookie').stop().hide();
+            e.preventDefault();
+          });
+      });
+    </script>
+
     <!-- jQuery -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <!-- slick js -->
