@@ -728,7 +728,7 @@
               }
             }
             .title {
-              text-decoration: underline;
+              color: #5366a4;
             }
           }
         }
@@ -822,6 +822,9 @@
             }
             .infoBox {
               opacity: 1;
+              .title {
+                color: #5366a4;
+              }
             }
           }
         }
@@ -2268,6 +2271,7 @@
       }
       .pic {
         margin: 0 0 10px;
+        max-width: 375px;
         img {
           aspect-ratio: 1;
           object-fit: contain;

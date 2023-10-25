@@ -793,7 +793,7 @@
   transition: all 5s ease;
 }
 .ttsm .MP .exhibition .topBox .item:hover .title {
-  text-decoration: underline;
+  color: #5366a4;
 }
 .ttsm .MP .exhibition .topBox .pic {
   max-width: 800px;
@@ -890,6 +890,9 @@
 }
 .ttsm .MP .exhibition .navBox .item:hover .infoBox {
   opacity: 1;
+}
+.ttsm .MP .exhibition .navBox .item:hover .infoBox .title {
+  color: #5366a4;
 }
 .ttsm .MP .exhibition .navBox a {
   display: block;
@@ -2336,6 +2339,7 @@
 }
 .ttsm .cp2 .topInfoBox .pic {
   margin: 0 0 10px;
+  max-width: 375px;
 }
 .ttsm .cp2 .topInfoBox .pic img {
   aspect-ratio: 1;
