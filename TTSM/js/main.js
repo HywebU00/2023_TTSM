@@ -86,11 +86,6 @@ $('.KV-Banner .navBox a').on('click', function (e) {
 
 $('.exhibition .container').prepend('<div class="topBox wow fadeInDown" data-wow-delay=".2s"></div>');
 $('.exhibition .topBox').append($('.exhibition .navBox .item').eq(0).clone());
-$('.exhibition .navBox .item a').on('click', function (e) {
-  // e.preventDefault();
-  $('.exhibition .topBox .item').remove();
-  $('.exhibition .topBox').append($(this).parent('.item').clone());
-});
 
 $('.MP .video .container .bottomBox').append('<div class="control"><div class="count"></div></div>');
 
@@ -116,6 +111,12 @@ const checkWidthFn = () => {
       i >= 1 ? $(this).appendTo($('.MP .video .listBox .sideBox')) : '';
     });
 
+    $('.exhibition .navBox .item a').on('click', function (e) {
+      e.preventDefault();
+      $('.exhibition .topBox .item').remove();
+      $('.exhibition .topBox').append($(this).parent('.item').clone());
+    });
+
     m = true;
   } else if (!checkWidth && m) {
     m = false;
@@ -127,6 +128,8 @@ const checkWidthFn = () => {
       $(this).appendTo($('.MP .video .listBox'));
     });
     $('.MP .video .listBox .sideBox').remove();
+
+    $('.exhibition .navBox .item a').off('click');
 
     if (!$('.MP .exhibition .navBox').hasClass('slick-initialized')) {
       $('.MP .exhibition .navBox').slick({

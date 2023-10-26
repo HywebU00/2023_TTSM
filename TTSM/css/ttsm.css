@@ -92,10 +92,6 @@
      object-fit: cover;
 }
 
-.ttsm *:before,
-.ttsm *:after {
-  display: none;
-}
 .ttsm .sidebar .m_area {
   height: auto;
   bottom: 0;
@@ -453,7 +449,8 @@
   transition: all 0.3s ease;
 }
 .ttsm .menu ul li a:hover, .ttsm .menu ul li a:focus {
-  background: none !important;
+  color: #fff;
+  background: #b02b73 !important;
 }
 .ttsm .sidebar {
   display: block;
@@ -491,13 +488,18 @@
 }
 .ttsm .MP .indexMore {
   display: block;
-  text-align: right;
   position: relative;
   font-size: 1rem;
   color: #5366a4;
   padding-bottom: 5px;
   text-align: center;
   margin: 30px auto 0;
+}
+@media screen and (min-width: 992px) {
+  .ttsm .MP .indexMore {
+    text-align: right;
+    margin: 10px 0 0 auto;
+  }
 }
 .ttsm .MP .indexMore::before {
   content: "";
@@ -506,10 +508,16 @@
   position: absolute;
   display: block;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 0;
   background: #5366a4;
   transition: all 0.3s ease;
+}
+@media screen and (max-width: 991px) {
+  .ttsm .MP .indexMore::before {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
 }
 .ttsm .MP .indexMore:hover {
   color: #b02b73;
@@ -635,6 +643,8 @@
 }
 .ttsm .MP .KV-Banner .navBox .item .pic img {
   aspect-ratio: 155/84;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .ttsm .MP .KV-Banner .navBox .slick-current .pic {
   border: 4px solid #4cabef;
@@ -788,12 +798,18 @@
 .ttsm .MP .exhibition .topBox .item {
   padding: 0 0 20px;
 }
+@media screen and (min-width: 992px) {
+  .ttsm .MP .exhibition .topBox .item {
+    display: block !important;
+    width: 100% !important;
+  }
+}
 .ttsm .MP .exhibition .topBox .item:hover .pic img {
   transform: scale(1.2);
   transition: all 5s ease;
 }
 .ttsm .MP .exhibition .topBox .item:hover .title {
-  color: #5366a4;
+  color: #b02b73;
 }
 .ttsm .MP .exhibition .topBox .pic {
   max-width: 800px;
@@ -849,6 +865,11 @@
   gap: 20px;
 }
 @media screen and (min-width: 992px) {
+  .ttsm .MP .exhibition .navBox {
+    margin: -15px -15px 30px;
+  }
+}
+@media screen and (min-width: 992px) {
   .ttsm .MP .exhibition .navBox .slick-list,
   .ttsm .MP .exhibition .navBox .slick-track {
     width: 100% !important;
@@ -892,7 +913,12 @@
   opacity: 1;
 }
 .ttsm .MP .exhibition .navBox .item:hover .infoBox .title {
-  color: #5366a4;
+  color: #b02b73;
+}
+@media screen and (min-width: 992px) {
+  .ttsm .MP .exhibition .navBox .item:hover .infoBox .title {
+    color: #fff;
+  }
 }
 .ttsm .MP .exhibition .navBox a {
   display: block;
@@ -1017,6 +1043,9 @@
 .ttsm .MP .hotNews .item:hover .infoBox {
   transform: translateY(-20px);
 }
+.ttsm .MP .hotNews .item:hover .title {
+  color: #b02b73;
+}
 .ttsm .MP .hotNews .item a {
   display: flex;
   align-items: center;
@@ -1064,7 +1093,7 @@
     width: 50%;
     margin: 20px 0;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
   }
 }
 .ttsm .MP .hotNews .description {
@@ -1104,6 +1133,10 @@
     padding: 50px 20px 50px;
   }
 }
+.ttsm .MP .news .container {
+  display: flex;
+  flex-direction: column;
+}
 .ttsm .MP .news .listBox {
   display: flex;
   flex-wrap: wrap;
@@ -1141,7 +1174,7 @@
   transition: all 5s ease;
 }
 .ttsm .MP .news .item:hover .title {
-  color: #5366a4;
+  color: #b02b73;
 }
 .ttsm .MP .news .pic {
   background: #fff;
@@ -1433,12 +1466,16 @@
     padding: 0 20px 0 0;
   }
 }
+.ttsm .MP .partner .item:hover .pic {
+  border-color: #b02b73;
+}
 .ttsm .MP .partner .pic {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
   border: 1px solid #efefef;
+  transition: all 0.3s linear;
 }
 .ttsm .MP .partner .pic img {
   aspect-ratio: 20/9;
@@ -1508,14 +1545,9 @@
 .ttsm .breadcrumbBox {
   width: 100%;
   padding: 0 20px;
-  margin: 0 0 60px;
+  margin: 0 0 30px;
   padding-bottom: 10px;
   border-bottom: 1px solid #efefef;
-}
-@media screen and (max-width: 991px) {
-  .ttsm .breadcrumbBox {
-    margin: 0 0 30px;
-  }
 }
 .ttsm .breadcrumbBox .breadcrumb {
   font-size: 1rem;
@@ -1750,7 +1782,7 @@
   }
 }
 .ttsm .lpList .item a:hover {
-  color: #5366a4;
+  color: #b02b73;
 }
 .ttsm .lpList .item a:hover .pic img {
   transform: scale(1.2);
@@ -2094,7 +2126,7 @@
   isolation: isolate;
 }
 .ttsm .lpSwitch .listBox .item:hover .title {
-  color: #5366a4;
+  color: #b02b73;
 }
 .ttsm .lpSwitch .listBox .item a {
   display: block;
@@ -2162,6 +2194,9 @@
   transform: translateY(-50%) translateX(-50%);
   border: none;
   background: url("../images/icon/icon_star.png");
+}
+.ttsm .lpSwitch .listBox .infoBox button.star.active::before {
+  background-position: center bottom;
 }
 .ttsm .lpSwitch .listBox .infoBox button.switchBtn {
   right: 0px;
@@ -2427,7 +2462,7 @@
   .ttsm .cp2 .topInfoBox .infoBox {
     margin: 0;
     position: relative;
-    padding: 60px 0 0;
+    padding: 80px 0 0;
   }
 }
 .ttsm .cp2 .topInfoBox .infoBox .title {
@@ -2467,14 +2502,24 @@
   white-space: nowrap;
 }
 .ttsm .cp2 .topInfoBox .infoBox > a, .ttsm .cp2 .topInfoBox .infoBox > button {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: block;
   position: absolute;
   border: none;
   background: none;
   top: 20px;
   z-index: 9;
+  transition: all 0.3s linear;
+}
+@media screen and (max-width: 767px) {
+  .ttsm .cp2 .topInfoBox .infoBox > a, .ttsm .cp2 .topInfoBox .infoBox > button {
+    width: 45%;
+    left: 50%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.2) 100%);
+  }
 }
 .ttsm .cp2 .topInfoBox .infoBox > a::before, .ttsm .cp2 .topInfoBox .infoBox > button::before {
   content: "";
@@ -2486,20 +2531,37 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateY(-50%) translateX(-50%);
+  transform: translate(-50%, -50%);
   border: none;
 }
 .ttsm .cp2 .topInfoBox .infoBox > a.star, .ttsm .cp2 .topInfoBox .infoBox > button.star {
-  right: 20px;
+  right: 0;
+}
+@media screen and (max-width: 767px) {
+  .ttsm .cp2 .topInfoBox .infoBox > a.star, .ttsm .cp2 .topInfoBox .infoBox > button.star {
+    right: auto;
+    transform: translateX(5%);
+  }
 }
 .ttsm .cp2 .topInfoBox .infoBox > a.star::before, .ttsm .cp2 .topInfoBox .infoBox > button.star::before {
   background: url("../images/icon/icon_star.png");
 }
 .ttsm .cp2 .topInfoBox .infoBox > a.world, .ttsm .cp2 .topInfoBox .infoBox > button.world {
-  right: 60px;
+  right: 40px;
+}
+@media screen and (max-width: 767px) {
+  .ttsm .cp2 .topInfoBox .infoBox > a.world, .ttsm .cp2 .topInfoBox .infoBox > button.world {
+    right: auto;
+    transform: translateX(-105%);
+  }
 }
 .ttsm .cp2 .topInfoBox .infoBox > a.world::before, .ttsm .cp2 .topInfoBox .infoBox > button.world::before {
   background: url("../images/icon/icon_world.png");
+}
+@media screen and (max-width: 767px) {
+  .ttsm .cp2 .topInfoBox .infoBox > a.active, .ttsm .cp2 .topInfoBox .infoBox > a:hover, .ttsm .cp2 .topInfoBox .infoBox > button.active, .ttsm .cp2 .topInfoBox .infoBox > button:hover {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.02) 100%);
+  }
 }
 .ttsm .cp2 .topInfoBox .infoBox > a.active::before, .ttsm .cp2 .topInfoBox .infoBox > a:hover::before, .ttsm .cp2 .topInfoBox .infoBox > button.active::before, .ttsm .cp2 .topInfoBox .infoBox > button:hover::before {
   background-position: bottom;

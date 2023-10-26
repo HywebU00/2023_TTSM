@@ -15,10 +15,10 @@
 }
 
 .ttsm {
-  *:before,
-  *:after {
-    display: none;
-  }
+  // *:before,
+  // *:after {
+  //   display: none;
+  // }
   .sidebar .m_area {
     height: auto;
     bottom: 0;
@@ -368,7 +368,8 @@
           transition: all 0.3s ease;
           &:hover,
           &:focus {
-            background: none !important;
+            color: #fff;
+            background: #b02b73 !important;
           }
         }
       }
@@ -406,13 +407,16 @@
 
     .indexMore {
       display: block;
-      text-align: right;
       position: relative;
       font-size: Rem(16);
       color: #5366a4;
       padding-bottom: 5px;
       text-align: center;
       margin: 30px auto 0;
+      @include screen('tabletMin') {
+        text-align: right;
+        margin: 10px 0 0 auto;
+      }
       &::before {
         content: '';
         width: 10ch;
@@ -420,10 +424,14 @@
         position: absolute;
         display: block;
         bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        right: 0;
         background: #5366a4;
         @include transition(all, 0.3);
+        @include screen('tablet') {
+          left: 50%;
+          right: auto;
+          transform: translateX(-50%);
+        }
       }
       &:hover {
         color: #b02b73;
@@ -543,6 +551,7 @@
             border: 1px solid #dfdfdf;
             img {
               aspect-ratio: 155/84;
+              object-fit: cover;
             }
           }
         }
@@ -720,6 +729,10 @@
         }
         .item {
           padding: 0 0 20px;
+          @include screen('tabletMin') {
+            display: block !important;
+            width: 100% !important;
+          }
           &:hover {
             .pic {
               img {
@@ -728,7 +741,7 @@
               }
             }
             .title {
-              color: #5366a4;
+              color: #b02b73;
             }
           }
         }
@@ -781,6 +794,9 @@
         display: flex;
         margin: -15px 0 30px;
         gap: 20px;
+        @include screen('tabletMin') {
+          margin: -15px -15px 30px;
+        }
         .slick-list,
         .slick-track {
           @include screen('tabletMin') {
@@ -823,7 +839,10 @@
             .infoBox {
               opacity: 1;
               .title {
-                color: #5366a4;
+                color: #b02b73;
+                @include screen('tabletMin') {
+                  color: #fff;
+                }
               }
             }
           }
@@ -944,6 +963,9 @@
           .infoBox {
             transform: translateY(-20px);
           }
+          .title {
+            color: #b02b73;
+          }
         }
         a {
           display: flex;
@@ -987,7 +1009,7 @@
           width: 50%;
           margin: 20px 0;
           border-radius: 10px;
-          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.4);
         }
       }
       .description {
@@ -1027,6 +1049,10 @@
       @include screen('mobile') {
         padding: 50px 20px 50px;
       }
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
       .listBox {
         display: flex;
         flex-wrap: wrap;
@@ -1056,7 +1082,7 @@
             @include transition(all, 5);
           }
           .title {
-            color: #5366a4;
+            color: #b02b73;
           }
         }
       }
@@ -1349,6 +1375,11 @@
         @include screen('tablet') {
           padding: 0 20px 0 0;
         }
+        &:hover {
+          .pic {
+            border-color: #b02b73;
+          }
+        }
       }
       .pic {
         background: #fff;
@@ -1356,6 +1387,7 @@
         overflow: hidden;
         position: relative;
         border: 1px solid #efefef;
+        transition: all 0.3s linear;
         img {
           aspect-ratio: 20/9;
           object-fit: contain;
@@ -1423,12 +1455,9 @@
   .breadcrumbBox {
     width: 100%;
     padding: 0 20px;
-    margin: 0 0 60px;
+    margin: 0 0 30px;
     padding-bottom: 10px;
     border-bottom: 1px solid #efefef;
-    @include screen('tablet') {
-      margin: 0 0 30px;
-    }
 
     .breadcrumb {
       font-size: Rem(16);
@@ -1697,7 +1726,7 @@
           flex-direction: column;
         }
         &:hover {
-          color: #5366a4;
+          color: #b02b73;
           .pic img {
             transform: scale(1.2);
           }
@@ -2033,7 +2062,7 @@
         isolation: isolate;
         &:hover {
           .title {
-            color: #5366a4;
+            color: #b02b73;
           }
         }
         a {
@@ -2102,6 +2131,11 @@
               transform: translateY(-50%) translateX(-50%);
               border: none;
               background: url('../images/icon/icon_star.png');
+            }
+            &.active {
+              &::before {
+                background-position: center bottom;
+              }
             }
           }
           &.switchBtn {
@@ -2372,7 +2406,7 @@
         @include screen('mobile') {
           margin: 0;
           position: relative;
-          padding: 60px 0 0;
+          padding: 80px 0 0;
         }
         .title {
           font-size: Rem(30);
@@ -2408,14 +2442,22 @@
         }
         & > a,
         & > button {
-          width: 30px;
-          height: 30px;
+          width: 40px;
+          height: 40px;
           display: block;
           position: absolute;
           border: none;
           background: none;
           top: 20px;
           z-index: 9;
+          transition: all 0.3s linear;
+          @include screen('mobile') {
+            width: 45%;
+            left: 50%;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.2) 100%);
+          }
           &::before {
             content: '';
             width: 20px;
@@ -2426,23 +2468,34 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translateY(-50%) translateX(-50%);
+            transform: translate(-50%, -50%);
             border: none;
           }
           &.star {
-            right: 20px;
+            right: 0;
+            @include screen('mobile') {
+              right: auto;
+              transform: translateX(5%);
+            }
             &::before {
               background: url('../images/icon/icon_star.png');
             }
           }
           &.world {
-            right: 60px;
+            right: 40px;
+            @include screen('mobile') {
+              right: auto;
+              transform: translateX(-105%);
+            }
             &::before {
               background: url('../images/icon/icon_world.png');
             }
           }
           &.active,
           &:hover {
+            @include screen('mobile') {
+              background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.02) 100%);
+            }
             &::before {
               background-position: bottom;
             }
