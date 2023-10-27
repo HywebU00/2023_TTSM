@@ -1486,6 +1486,9 @@
 .ttsm .innerpage {
   line-height: 1.8;
 }
+.ttsm .innerpage::before {
+  display: none !important;
+}
 .ttsm .innerpage .contentBox {
   font-size: 1rem;
   padding: 0 20px;

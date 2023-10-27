@@ -1399,6 +1399,9 @@
 
 .ttsm {
   .innerpage {
+    &::before {
+      display: none !important;
+    }
     line-height: 1.8;
     .contentBox {
       font-size: Rem(16);
