@@ -2485,6 +2485,12 @@
     font-size: 1.25rem;
   }
 }
+.ttsm .cp2 .topInfoBox .infoBox .title a {
+  color: #5366a4;
+}
+.ttsm .cp2 .topInfoBox .infoBox .title a:hover {
+  color: #b02b73;
+}
 .ttsm .cp2 .topInfoBox .infoBox table {
   border-collapse: collapse;
   border: none;
