@@ -2119,14 +2119,26 @@
 .ttsm .lpSwitch .listBox {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 .ttsm .lpSwitch .listBox .item {
   width: 100%;
-  padding: 0 0 20px;
+  padding: 20px 0;
   border-bottom: 1px solid #efefef;
   position: relative;
   isolation: isolate;
+}
+.ttsm .lpSwitch .listBox .item::before {
+  content: "";
+  position: absolute;
+  inset: 0 -10px;
+  display: block;
+  background: #e9e9e9;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.ttsm .lpSwitch .listBox .item:hover::before {
+  opacity: 1;
 }
 .ttsm .lpSwitch .listBox .item:hover .title {
   color: #b02b73;
@@ -2273,6 +2285,7 @@
   width: calc((100% - 20px) / 2);
   border: none;
   border-radius: 8px;
+  padding: 0 0 20px;
   overflow: hidden;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -2322,6 +2335,7 @@
   .ttsm .lpSwitch .list .item {
     width: calc((100% - 20px) / 2);
     border: none;
+    padding: 0 0 20px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
