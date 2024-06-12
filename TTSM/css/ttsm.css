@@ -2143,6 +2143,9 @@
 .ttsm .lpSwitch .listBox .item:hover .title {
   color: #b02b73;
 }
+.ttsm .lpSwitch .listBox .item:hover .tagBox ul li {
+  background: #fff;
+}
 .ttsm .lpSwitch .listBox .item a {
   display: block;
   position: absolute;
