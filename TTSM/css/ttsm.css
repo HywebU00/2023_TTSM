@@ -579,11 +579,13 @@
   z-index: 9;
   padding: 8px 20px;
   background: rgba(0, 0, 0, 0.7);
-  line-height: 1.2;
+  line-height: 1.8;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  isolation: isolate;
+  background: rgba(0, 0, 0, 0.7);
 }
 @media screen and (max-width: 991px) {
   .ttsm .MP .KV-Banner .description {
